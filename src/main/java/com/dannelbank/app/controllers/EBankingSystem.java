@@ -51,7 +51,8 @@ public class EBankingSystem {
 		final String KEY_EXIT 	= "E";
 		String key, val			= null;
 		String str 				= String.format("\nWelcome, %s %s", 
-									this.cust.getfName(), this.cust.getlName());
+									this.cust.getCustomerName().getFirstName(), 
+									this.cust.getCustomerName().getLastName());
 		
 		// Iterating over commands(key, value) for UI
 		for (Map.Entry<String, String> entry : COMMANDS_VAL.entrySet()) {
@@ -118,7 +119,8 @@ public class EBankingSystem {
 		
 		
 		do {
-			PrintPanel(new Customer("Dannel", "Alon"));
+			Customer cust = new Customer();
+			PrintPanel(cust);
 			// Input should be validated
 			in1 = scan.next().toUpperCase();
 			
@@ -127,7 +129,7 @@ public class EBankingSystem {
 				isOver = !inDoWhileSubPanel(in1); //Why?
 			
 		} while(!isOver);
-		
+		//scan.close();
 		return isOver;
 	}
 	
@@ -148,7 +150,7 @@ public class EBankingSystem {
 
 			} while(!isOver);
 		}
-		
+		//scan.close();
 		return isOver;
 	}
 	

@@ -1,3 +1,4 @@
+com/dannelbank/app/providers/AuthenticationProvider.class
 com/dannelbank/app/interfaces/IPayProvider.class
 com/dannelbank/app/constants/EBankingCommands$4.class
 com/dannelbank/app/controllers/EBankingController.class
@@ -17,16 +18,18 @@ com/dannelbank/app/models/abstracts/Card.class
 com/dannelbank/app/constants/EBankingCommands$2.class
 com/dannelbank/app/constants/EBankingCommands$3.class
 com/dannelbank/app/providers/RequestMoneyProvider.class
+com/dannelbank/app/interfaces/IAuthenticationProvider.class
 com/dannelbank/app/models/Address.class
 com/dannelbank/app/models/ChequingAccount.class
 com/dannelbank/app/models/CreditCard.class
 com/dannelbank/app/providers/DepositMoneyProvider.class
+com/dannelbank/app/models/Authentication.class
 com/dannelbank/app/models/Customer.class
 com/dannelbank/app/constants/EBankingCommands$1.class
+com/dannelbank/app/models/CustomerName.class
 com/dannelbank/app/constants/EBankingCommandNumbers.class
 com/dannelbank/app/controllers/CustomerRegistration.class
 com/dannelbank/app/providers/CheckBalanceProvider.class
-com/dannelbank/app/controllers/Authentication.class
 com/dannelbank/app/providers/PayProvider.class
 com/dannelbank/app/models/abstracts/Account.class
 com/dannelbank/app/constants/EBankingCommands.class

@@ -3,6 +3,7 @@ package com.dannelbank.app.dba;
 import java.util.*;
 import com.dannelbank.app.annotations.WrittenBy;
 import com.dannelbank.app.models.Customer;
+import com.dannelbank.app.models.CustomerName;
 
 /**
  * Customer Repository Class.
@@ -16,13 +17,24 @@ import com.dannelbank.app.models.Customer;
 public class CustomerRepository {
 
 	private static ArrayList<Customer> listCust = new ArrayList<Customer>() {{
-		add(new Customer("Dannel", "Alon", "dalon@cibc.com", "dalon"));
-		add(new Customer("Joel", "Alon", "joel@gmail.com", "password"));
-		add(new Customer("Eitan", "Alon", "eitan@gmail.com", "password"));
-		add(new Customer("Cloe", "Alonita", "cloe@gmail.com", "cloe64"));
+		add(mockCustomer("Dannel", "Alon", "dalon@cibc.com", "dalon"));
+		add(mockCustomer("Joel", "Alon", "joel@gmail.com", "password"));
+		add(mockCustomer("Eitan", "Alon", "eitan@gmail.com", "password"));
+		add(mockCustomer("Cloe", "Alonita", "cloe@gmail.com", "cloe64"));
 	}};
 	
 	public static List<Customer> getCustomers() {
 		return listCust;
+	}
+	
+	private static Customer mockCustomer(String firstName, String lastName, String emailAddress, String password) {
+		Customer customer = new Customer();
+		CustomerName customerName = new CustomerName();
+		customerName.setFirstName(firstName);
+		customerName.setLastName(lastName);
+		customer.setCustomerName(customerName);
+		customer.setEmailAddress(emailAddress);
+		customer.setPassword(password);
+		return customer;
 	}
 }

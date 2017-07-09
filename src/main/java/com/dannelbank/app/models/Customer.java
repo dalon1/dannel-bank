@@ -11,16 +11,9 @@ import com.dannelbank.app.annotations.*;
 		author="Dannel",
 		date="19/03/2017")
 public class Customer {
-	//TODO implement interface for customer behaviour
-	
-	/*
-	 * >> Attributes
-	 * */
-	
 	private int id;
-	private String fName;
-	private String lName;
-	private String email;
+	private CustomerName customerName;
+	private String emailAddress;
 	private String password = "banking";
 	private String phone;
 	private Address address;
@@ -29,20 +22,11 @@ public class Customer {
 	private CreditCard creditCard;
 	private boolean isSigned = false;
 	
-	/*
-	 * >> Properties
-	 * */
-	public String getfName() {
-		return fName;
+	public CustomerName getCustomerName() {
+		return customerName;
 	}
-	public void setfName(String fName) {
-		this.fName = fName;
-	}
-	public String getlName() {
-		return lName;
-	}
-	public void setlName(String lName) {
-		this.lName = lName;
+	public void setCustomerName(CustomerName customerName) {
+		this.customerName = customerName;
 	}
 	public Address getAddress() {
 		return address;
@@ -50,11 +34,11 @@ public class Customer {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	public String getEmail() {
-		return email;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	public String getPhone() {
 		return phone;
@@ -99,56 +83,4 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	/*
-	 * >> Instance Methods
-	 * */
-	
-	/*
-	 * >> Constructor(s)
-	 * */
-	// All required + optional fields: old customer.
-	public Customer(String valFName, String valLName, String valEmail,
-			String valPassword,
-			String valPhone, Address valAddress, BankAccount valBankAcc, 
-			DebitCard valDebitCard, CreditCard valCreditCard) {
-		setfName(valFName);
-		setlName(valLName);
-		setEmail(valEmail);
-		setPassword(valPassword);
-		setPhone(valPhone);
-		setAddress(valAddress);
-		setBankAccount(valBankAcc);
-		setDebitCard(valDebitCard);
-		setCreditCard(valCreditCard);
-		// Generate ID here >>
-		// ....
-	}
-	
-	// All required fields: old customer.
-	public Customer(String valfName, String vallName, String valEmail,
-			String valPassword, BankAccount valBankAcc) {
-		this(valfName, vallName, valEmail, valPassword,null,
-				null, valBankAcc, null, null);
-	}
-	
-	// All required fields: new customer.
-	public Customer(String valfName, String vallName, String valEmail,
-			String valPassword) {
-		this(valfName, vallName, valEmail, valPassword, 
-				null, null, null, null, null);
-	}
-	
-	// All essential fields: new customer with nothing.
-	public Customer(String valfName, String vallName) {
-		this(valfName, vallName, null, null, null,
-				null, null, null, null);
-	}
-	
-	public Customer() {
-		// No Body
-		this(null, null,  null, null, null, null, null, null, null);
-	}
-	
-	
-	
 }

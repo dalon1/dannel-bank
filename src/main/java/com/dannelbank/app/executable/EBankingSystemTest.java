@@ -1,8 +1,8 @@
 package com.dannelbank.app.executable;
 
 import com.dannelbank.app.annotations.WrittenBy;
-import com.dannelbank.app.controllers.Authentication;
 import com.dannelbank.app.controllers.EBankingSystem;
+import com.dannelbank.app.controllers.AuthenticationController;
 
 import java.util.Date;
 
@@ -13,17 +13,7 @@ public class EBankingSystemTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		Authentication auth = new Authentication();
-	
-		auth.authenticate();
-
-		
-		if (auth.getIsAuthentic()) 
-		{
-			EBankingSystem sys = new EBankingSystem(auth.getAuthenticCust());
-			sys.Start();
-		}
+		new AuthenticationController().start();
 	}
 	
 }
